@@ -372,11 +372,14 @@ namespace HyattCalculator
 
         private void plus_minus_Click(object sender, EventArgs e)
         {
-            calc.curNum = calc.curNum * -1;
-            answerBox.Text = Convert.ToString(calc.curNum);
-            calc.toBeComputed += "*-1";
-            Console.WriteLine(calc.toBeComputed);
-            calc.math(calc);
+            if (answerBox.Text != "0")
+            {
+                calc.curNum = calc.curNum * -1;
+                answerBox.Text = Convert.ToString(calc.curNum);
+                calc.toBeComputed += "*-1";
+                Console.WriteLine(calc.toBeComputed);
+                calc.math(calc);
+            }
         }
 
         private void remainder_Click(object sender, EventArgs e)
