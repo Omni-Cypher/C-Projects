@@ -29,6 +29,7 @@ namespace Calculator
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(History));
             this.label1 = new System.Windows.Forms.Label();
             this.history_box = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -64,6 +65,7 @@ namespace Calculator
             this.ClientSize = new System.Drawing.Size(343, 450);
             this.Controls.Add(this.history_box);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(361, 497);
             this.MinimumSize = new System.Drawing.Size(361, 497);
             this.Name = "History";
