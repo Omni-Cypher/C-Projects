@@ -57,7 +57,7 @@ namespace HyattCalculator
             // 
             this.answerBox.BackColor = System.Drawing.Color.Black;
             this.answerBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.answerBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.answerBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.answerBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.answerBox.Location = new System.Drawing.Point(13, 11);
             this.answerBox.Multiline = true;

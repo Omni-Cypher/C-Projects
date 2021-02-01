@@ -19,6 +19,7 @@ namespace HyattCalculator
         Calculate calc = new Calculate();
        
         public int lineCount = 0;
+        public bool lastOp = false;
 
       
 
@@ -44,10 +45,7 @@ namespace HyattCalculator
 
         private void answerBox_TextChanged(object sender, EventArgs e)
         {
-            if(answerBox.Text == "") //check if the box is empty. set it to 0
-            {
-                answerBox.Text = "0"; 
-            }
+            
             try
             {
                 calc.curNum = Convert.ToDouble(answerBox.Text);
@@ -62,12 +60,15 @@ namespace HyattCalculator
 
         private void seven_btn_Click(object sender, EventArgs e)
         {
-            if (calc.op != " ") //clears the box if an operator was just entered
+
+            if(lastOp == true)
             {
-                answerBox.Text = "0";
+                lastOp = false;
+                answerBox.Text = "7";
+                calc.toBeComputed += "7"; //build string
             }
 
-            if (answerBox.Text == "0")
+            else if (answerBox.Text == "0")
             {
                 answerBox.Text = "7";
                 calc.toBeComputed += "7"; //build string
@@ -81,12 +82,15 @@ namespace HyattCalculator
 
         private void eight_btn_Click(object sender, EventArgs e)
         {
-            if (calc.op != " ") //clears the box if an operator was just entered
+
+            if (lastOp == true)
             {
-                answerBox.Text = "0";
+                lastOp = false;
+                answerBox.Text = "8";
+                calc.toBeComputed += "8"; //build string
             }
 
-            if (answerBox.Text == "0")
+            else if (answerBox.Text == "0")
             {
                 answerBox.Text = "8";
                 calc.toBeComputed += "8"; //build string
@@ -100,12 +104,15 @@ namespace HyattCalculator
 
         private void nine_btn_Click(object sender, EventArgs e)
         {
-            if (calc.op != " ") //clears the box if an operator was just entered
+
+            if (lastOp == true)
             {
-                answerBox.Text = "0";
+                lastOp = false;
+                answerBox.Text = "9";
+                calc.toBeComputed += "9"; //build string
             }
 
-            if (answerBox.Text == "0")
+            else if (answerBox.Text == "0")
             {
                 answerBox.Text = "9";
                 calc.toBeComputed += "9"; //build string
@@ -119,12 +126,16 @@ namespace HyattCalculator
 
         private void four_btn_Click(object sender, EventArgs e)
         {
-            if (calc.op != " ") //clears the box if an operator was just entered
+
+
+            if (lastOp == true)
             {
-                answerBox.Text = "0";
+                lastOp = false;
+                answerBox.Text = "1";
+                calc.toBeComputed += "1"; //build string
             }
 
-            if (answerBox.Text == "0")
+            else if (answerBox.Text == "0")
             {
                 answerBox.Text = "4";
                 calc.toBeComputed += "4"; //build string
@@ -138,12 +149,14 @@ namespace HyattCalculator
 
         private void five_btn_Click(object sender, EventArgs e)
         {
-            if (calc.op != " ") //clears the box if an operator was just entered
+            if (lastOp == true)
             {
-                answerBox.Text = "0";
+                lastOp = false;
+                answerBox.Text = "5";
+                calc.toBeComputed += "5"; //build string
             }
 
-            if (answerBox.Text == "0")
+            else if (answerBox.Text == "0")
             {
                 answerBox.Text = "5";
                 calc.toBeComputed += "5"; //build string
@@ -157,12 +170,16 @@ namespace HyattCalculator
 
         private void six_btn_Click(object sender, EventArgs e)
         {
-            if (calc.op != " ") //clears the box if an operator was just entered
+
+
+            if (lastOp == true)
             {
-                answerBox.Text = "0";
+                lastOp = false;
+                answerBox.Text = "6";
+                calc.toBeComputed += "6"; //build string
             }
 
-            if (answerBox.Text == "0")
+            else if (answerBox.Text == "0")
             {
                 answerBox.Text = "6";
                 calc.toBeComputed += "6"; //build string
@@ -176,12 +193,14 @@ namespace HyattCalculator
 
         private void one_btn_Click(object sender, EventArgs e)
         {
-            if (calc.op != " ") //clears the box if an operator was just entered
+            if(lastOp == true)
             {
-                answerBox.Text = "0";
+                lastOp = false;
+                answerBox.Text = "1";
+                calc.toBeComputed += "1"; //build string
             }
 
-            if (answerBox.Text == "0")
+            else if (answerBox.Text == "0")
             {
                 answerBox.Text = "1";
                 calc.toBeComputed += "1"; //build string
@@ -195,12 +214,16 @@ namespace HyattCalculator
 
         private void two_btn_Click(object sender, EventArgs e)
         {
-            if (calc.op != " ") //clears the box if an operator was just entered
+
+
+            if (lastOp == true)
             {
-                answerBox.Text = "0";
+                lastOp = false;
+                answerBox.Text = "2";
+                calc.toBeComputed += "2"; //build string
             }
 
-            if (answerBox.Text == "0")
+            else if (answerBox.Text == "0")
             {
                 answerBox.Text = "2";
                 calc.toBeComputed += "2"; //build string
@@ -214,12 +237,16 @@ namespace HyattCalculator
 
         private void three_btn_Click(object sender, EventArgs e)
         {
-            if (calc.op != " ") //clears the box if an operator was just entered
+
+
+            if (lastOp == true)
             {
-                answerBox.Text = "0";
+                lastOp = false;
+                answerBox.Text = "3";
+                calc.toBeComputed += "3"; //build string
             }
 
-            if (answerBox.Text == "0")
+            else if (answerBox.Text == "0")
             {
                 answerBox.Text = "3";
                 calc.toBeComputed += "3"; //build string
@@ -233,11 +260,8 @@ namespace HyattCalculator
 
         private void zero_btn_Click(object sender, EventArgs e)
         {
-            if (calc.op != " ") //clears the box if an operator was just entered
-            {
-                answerBox.Text = "0";
-            }
 
+            lastOp = false;
             if (answerBox.Text != "0")
             {
                 answerBox.Text += 0;
@@ -247,6 +271,7 @@ namespace HyattCalculator
 
         private void clear_Click(object sender, EventArgs e)
         {
+            lastOp = false;
             answerBox.Text = "0";
             calc.curNum = 0;
             calc.toBeComputed = ""; //build string
@@ -255,6 +280,7 @@ namespace HyattCalculator
 
         private void period_btn_Click(object sender, EventArgs e)
         {
+            
             if (!answerBox.Text.Contains(".") && !calc.toBeComputed.Contains("."))
             {
                 answerBox.Text += ".";
@@ -264,33 +290,66 @@ namespace HyattCalculator
 
         private void plus_btn_Click(object sender, EventArgs e)
         {
+            if (lastOp == true) //changes the operation if the button clicked before it was another operation
+            {
+                String str = calc.toBeComputed;
+                str = str.Remove(str.Length - 1) ;
+                calc.toBeComputed = str; //sets it back to new string with replaced operator
+                Console.WriteLine("Replaced Last Op");
+            }
+            lastOp = true;
             calc.add(calc);
             //answerBox.Text = "";
         }
 
         private void subtract_btn_Click(object sender, EventArgs e)
         {
+            if (lastOp == true) //changes the operation if the button clicked before it was another operation
+            {
+                String str = calc.toBeComputed;
+                str = str.Remove(str.Length - 1);
+                calc.toBeComputed = str; //sets it back to new string with replaced operator
+                Console.WriteLine("Replaced Last Op");
+            }
+            lastOp = true;
             calc.subtract(calc);
             //answerBox.Text = "";
         }
 
         private void multiply_btn_Click(object sender, EventArgs e)
         {
+            if (lastOp == true) //changes the operation if the button clicked before it was another operation
+            {
+                String str = calc.toBeComputed;
+                str = str.Remove(str.Length - 1);
+                calc.toBeComputed = str; //sets it back to new string with replaced operator
+                Console.WriteLine("Replaced Last Op");
+            }
+            lastOp = true;
             calc.multiply(calc);
             //answerBox.Text = "";
         }
 
         private void divide_Click(object sender, EventArgs e)
         {
+            if (lastOp == true) //changes the operation if the button clicked before it was another operation
+            {
+                String str = calc.toBeComputed;
+                str = str.Remove(str.Length - 1);
+                calc.toBeComputed = str; //sets it back to new string with replaced operator
+                Console.WriteLine("Replaced Last Op");
+            }
+            lastOp = true;
             calc.divide(calc);
             //answerBox.Text = "";
         }
 
         private void equal_btn_Click(object sender, EventArgs e)
         {
+            lastOp = false; //clears any operations 
             lineCount++;//add line count 
             calc.history += "(" + lineCount + ". " + calc.toBeComputed; // add arithmatic lines to history
-          
+            
             if (answerBox.Text != "0")
             {
                 calc.num2 = Convert.ToDouble(answerBox.Text);
